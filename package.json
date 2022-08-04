@@ -1,0 +1,22 @@
+{
+  "name": "movieapi",
+  "version": "1.0.0",
+  "description": "Simple node movie API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keden12/MovieAPI.git"
+  },
+  "author": "keden12",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keden12/MovieAPI/issues"
+  },
+  "homepage": "https://github.com/keden12/MovieAPI#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
