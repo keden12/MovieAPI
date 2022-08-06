@@ -148,7 +148,7 @@ export const getMovie = (req, res) => {
     // If no query parameters have been added, send a random movie
     if(!req.query.genres && !req.query.duration) {
         randomMovie = getRandomMovie(movies);
-        res.send({ movies:randomMovie });
+        res.send({ movies: [randomMovie] });
         return;
     }
 
@@ -156,7 +156,7 @@ export const getMovie = (req, res) => {
     if(req.query.duration && !req.query.genres) {
         const moviesWithinRange = filterMoviesByDuration(movies, req.query.duration)
         randomMovie = getRandomMovie(moviesWithinRange);
-        res.send({ movies:randomMovie });
+        res.send({ movies: [randomMovie] });
         return;
     }
     
