@@ -19,6 +19,6 @@ app.use('*', (req, res) => {
 })
 
 
-app.listen(PORT, () => {
+export default app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
