@@ -1,11 +1,15 @@
-const express = require('express')
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import moviesRoutes from './routes/movies.js';
+
 const app = express()
-const port = 3000
+const PORT = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(bodyParser.json());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.use('/movies', moviesRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
 })
