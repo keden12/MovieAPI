@@ -8,8 +8,17 @@ const PORT = 3000
 
 app.use(bodyParser.json());
 
-app.use('/movies', moviesRoutes);
+app.use('/api', moviesRoutes);
 
-app.listen(PORT, () => {
+app.use('*', (req, res) => {
+  res.status(404)
+  res.send({
+    error: "Route not found"
+  })
+  
+})
+
+
+export default app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
