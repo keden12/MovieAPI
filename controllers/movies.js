@@ -63,23 +63,14 @@ function getParsedData(){
     return parsedData;
 }
 
-function getMovies(){
-    const parsedData = getParsedData();
-    const movies = parsedData.movies;
-    return movies;
-}
-
-function getGenres(){
-    const parsedData = getParsedData();
-    const genres = parsedData.genres;
-    return genres;
-}
-
 
 export const addMovie = (req, res) => {
+    // getting the parsed data
+    let parsedData = getParsedData();
+
     // getting movies and genres data
-    const movies = getMovies();
-    const genres = getGenres();
+    const movies = parsedData.movies;
+    const genres = parsedData.genres;
 
     // getting the movie details
     let movie = req.body;
@@ -110,21 +101,24 @@ export const addMovie = (req, res) => {
     
     fs.writeFile("./data/db.json", JSON.stringify(parsedData, null, 4), { encoding: 'utf8', flag: 'w'}, function (err) {
         if (err) {
-            console.log("An error occured while writing JSON Object to File.");
+            let message = "An error occured while writing JSON Object to File.";
+            res.status(500).send({ error:message });
             return console.log(err);
         }
 
-        console.log("JSON file has been saved.");
+       // console.log("JSON file has been saved.");
     });
 
-    res.send({ response:'Movie has been added successfully'});
+    res.status(201).send({ movies: movie });
 }
 
 
 export const getMovie = (req, res) => {
+    // getting the parsed data
+    let parsedData = getParsedData();
 
-    let movies = getMovies();
-    const genres = getGenres();
+    let movies = parsedData.movies;
+    const genres = parsedData.genres;
 
     let randomMovie = [];
 
