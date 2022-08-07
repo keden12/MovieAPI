@@ -4,7 +4,6 @@ import server from "../app.js";
 
 // Assertion style 
 chai.should();
-var expect = chai.expect;
 
 chai.use(chaiHttp);
 
