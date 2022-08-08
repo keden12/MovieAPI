@@ -16,13 +16,13 @@
 <h3>Examples:</h3>
 <p align="left"> A GET request to <b>http://localhost:3000/api/movies</b> will return a single random movie
 </p>
-<p align="left"> A GET request to <b>http://localhost:3000/api/movies?duration=130</b>  will return a single random movie with the runtime between <duration - 10> and <duration + 10>
+<p align="left"> A GET request to <b>http://localhost:3000/api/movies?duration=130</b>  will return a single random movie with the runtime between (duration - 10) and (duration + 10)
 </p>
-<p align="left"> A GET request to <b>http://localhost:3000/api/movies?duration=130</b>  will return a single random movie with the runtime between <duration - 10> and <duration + 10>
+<p align="left"> A GET request to <b>http://localhost:3000/api/movies?duration=130</b>  will return a single random movie with the runtime between (duration - 10) and (duration + 10)
 </p>
 <p align="left"> A GET request to <b>http://localhost:3000/api/movies?genres=Family&genres=Fantasy</b>  will return all movies that contain at least one of the specified genres. Also movies will be ordered by a number of genres that match.
 </p>
-<p align="left"> A GET request to <b>http://localhost:3000/api/movies?genres=Family&genres=Fantasy&duration=130</b>  will return all movies that contain at least one of the specified genres. Also movies will be ordered by a number of genres that match and narrowed down by runtime to be between <duration - 10> and <duration + 10>
+<p align="left"> A GET request to <b>http://localhost:3000/api/movies?genres=Family&genres=Fantasy&duration=130</b>  will return all movies that contain at least one of the specified genres. Also movies will be ordered by a number of genres that match and narrowed down by runtime to be between (duration - 10) and (duration + 10)
 </p>
 
 <p align="left"><b> Note: </b> Invalid values are checked and will return in a status 400 (bad request)
